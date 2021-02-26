@@ -8,9 +8,14 @@
     </head>
     <body>
         <header class="page-header">
-          <div class="container">
-              <h1><a href="/">Django Girls Blog</a></h1>
-          </div>
+            <div class="container">
+            {% if user.is_authenticated %}
+                <a href="{% url 'post_new' %}" class="top-menu">
+                    {% include './icons/file-earmark-plus.svg' %}
+                </a>
+                <h1><a href="/">Django Girls Blog</a></h1>
+            {% endif %}
+            </div>
         </header>
         <main class="container">
             <div class="row">
